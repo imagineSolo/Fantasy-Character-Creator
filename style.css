@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    text-align: center;
+    font-family: 'MedievalSharp';
+}
+
+body {
+    background-color: rgb(94, 32, 32);
+    color: aliceblue;
+}
+
+/* body,
+a:hover,
+button:hover {
+    cursor: url(https://1.bp.blogspot.com/-SrWrW7kwA7s/Vurt-S6kUzI/AAAAAAAABeA/DyHLGkjS_iQWg37IoMF-JsDYgecIWI6mg/s1600/cursor.png), progress;
+} */
+
+.wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("img/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    background-blend-mode: screen;
+}
+
+[disabled] {
+    cursor: not-allowed;
+}
+
+div.invitation {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 55vw;
+    background-color: rgb(65, 19, 19);
+    opacity: 0.7;
+    border-radius: 5%;
+    margin: 3vh;
+    padding-bottom: 4vh;
+}
+
+div.invitation h1 {
+    font-size: 52px;
+    margin: 30px;
+    padding: 15px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.85);
+}
+
+div.invitation h2 {
+    font-size: 42px;
+    margin: 20px;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.85);
+}
+
+div.invitation p {
+    padding: 10px;
+    font-size: 23px;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.85);
+    line-height: 40px;
+}
+
+button.start {
+    height: 45px;
+    width: auto;
+    background-color: rgb(167, 17, 47);
+    color: aliceblue;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    font-size: 25px;
+    text-align: center;
+    line-height: 0.5;
+    transition: 0.6s;
+}
+
+button.start:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+.summary {
+    position: fixed;
+    background-color: rgb(94, 32, 32);
+    color: aliceblue;
+    min-height: 100vh;
+    width: 25%;
+    top: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.genderSelection,
+.raceSelection,
+.nameSelection,
+.classSelection {
+    position: relative;
+    background-color: rgb(94, 32, 32);
+    color: aliceblue;
+    min-height: 23vh;
+    width: 50%;
+    left: 35%;
+    transform: translate(-50%, 0);
+    padding: 5px;
+    margin: 4vh;
+    -webkit-box-shadow: 6px 6px 5px 0px rgba(31, 2, 2, 0.55);
+    -moz-box-shadow: 6px 6px 5px 0px rgba(31, 2, 2, 0.55);
+    box-shadow: 6px 6px 5px 0px rgba(31, 2, 2, 0.55);
+}
+
+.nameSelected,
+.classSelected,
+.genderSelected,
+.raceSelected {
+    color: aliceblue;
+    padding: 5px;
+    margin: 15px;
+    font-size: 25px;
+}
+
+label {
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.85);
+}
+
+input {
+    height: 25px;
+    width: 150px;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 5%;
+}
+
+button.gender {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: -webkit-linear-gradient(#eee, #333);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 34px;
+    line-height: 1.4;
+    text-align: center;
+    margin: 15px;
+    transition: 1s;
+}
+
+button.gender:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.resetGender,
+.resetRace,
+.resetName,
+.resetClass {
+    position: absolute;
+    bottom: 10%;
+    right: 70px;
+    height: 30px;
+    width: auto;
+    background-color: rgb(36, 15, 15);
+    color: aliceblue;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 50%;
+    font-size: 15px;
+    text-align: center;
+    line-height: 1;
+    transition: 0.6s;
+}
+
+.resetGender,
+.resetRace,
+.resetName,
+.resetClass:hover {
+    background-color: rgb(54, 22, 22);
+    cursor: pointer;
+}
+
+.genderForward,
+.raceForward,
+.nameForward,
+.classForward {
+    position: absolute;
+    bottom: 10%;
+    right: 30px;
+    height: 30px;
+    width: auto;
+    background-color: rgb(36, 15, 15);
+    color: aliceblue;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 50%;
+    font-size: 15px;
+    text-align: center;
+    line-height: 1;
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+.next:hover {
+    background-color: rgb(54, 22, 22);
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#hidden {
+    display: none;
+}
+
+button.submitName {
+    height: 30px;
+    width: auto;
+    background-color: rgb(36, 15, 15);
+    color: aliceblue;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 8px;
+    font-size: 15px;
+    text-align: center;
+    line-height: 1;
+    transition: 0.6s;
+}
+
+button.submitName:hover {
+    background-color: rgb(54, 22, 22);
+    cursor: pointer;
+}
+
+button.charClass,
+button.charRace {
+    height: 30px;
+    width: auto;
+    background-color: rgb(36, 15, 15);
+    color: aliceblue;
+    padding: 6px;
+    margin: 5px;
+    border-radius: 8px;
+    font-size: 15px;
+    text-align: center;
+    line-height: 0.4;
+    transition: 0.6s;
+}
+
+button.charClass,
+button.charRace:hover {
+    background-color: rgb(54, 22, 22);
+    cursor: pointer;
+}
+
+h2 {
+    margin: 10px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.85);
+}

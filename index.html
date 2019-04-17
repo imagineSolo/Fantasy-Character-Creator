@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fantasy Character Creator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=MedievalSharp&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="invitation">
+            <h1>Fantasy Character Creator</h1>
+            <h2>Greetings, Stranger!</h2>
+            <p>Create your own fantasy character by making these simple step-by-step decisions.</p>
+            <p>Once we start, each decision will be summarized in a panel on the right.</p>
+            <p>Enjoy & have fun!</p>
+            <button class="start">Let's Start!</button>
+        </div>
+        <div class="summary" id="hidden">
+            <h2 class="summaryName"><span></span></h2>
+            <p class="summaryGender">Gender: <span></span></p>
+            <p class="summaryRace">Race: <span></span></p>
+            <p class="summaryClass">Class: <span></span></p>
+        </div>
+        <div class="genderSelection hidden">
+            <h2>First choose your character's gender:</h2>
+            <button id="btnFemale" class="gender female" title="Female" value="disabled"><i
+                    class="fas fa-venus gender female"></i></button>
+            <button id="btnMale" class="gender male" title="Male" value="disabled"><i
+                    class="fas fa-mars gender male"></i></button>
+            <div class="genderSelected"></div>
+            <button class="resetGender hidden"><i class="fas fa-undo-alt"></i></button>
+            <button class="genderForward hidden"><i class="fas fa-arrow-down"></i></button>
+        </div>
+        <div class="raceSelection hidden">
+            <h2>Choose race:</h2>
+            <button class="charRace human" title="Humans are the most versatile. No modificators.">Human</button>
+            <button class="charRace elf">Elf</button>
+            <button class="charRace dwarf">Dwarf</button>
+            <button class="charRace halfling">Halfling</button>
+            <div class="raceSelected"></div>
+            <button class="resetRace hidden"><i class="fas fa-undo-alt"></i></button>
+            <button class="raceForward hidden"><i class="fas fa-arrow-down"></i></button>
+        </div>
+        <div class="nameSelection hidden">
+            <h2>Write your character's name:</h2>
+            <form action="index.html">
+                <input type="text" name="charName" class="inputName"><button class="submitName">Confirm</button>
+                <div class="nameSelected"></div>
+                <button class="resetName hidden"><i class="fas fa-undo-alt"></i></button>
+                <button class="nameForward hidden"><i class="fas fa-arrow-down"></i></button>
+            </form>
+        </div>
+        <div class="classSelection hidden">
+            <h2>Choose a class:</h2>
+            <button class="charClass warrior">Warrior</button>
+            <button class="charClass wizard">Wizard</button>
+            <button class="charClass cleric">Cleric</button>
+            <button class="charClass rogue">Rogue</button>
+            <div class="classSelected"></div>
+            <button class="resetClass hidden"><i class="fas fa-undo-alt"></i></button>
+            <button class="classForward hidden"><i class="fas fa-arrow-down"></i></button>
+        </div>
+        <div class="portraitSelection hidden">
+            <h2>Choose a portrait:</h2>
+
+            <div class="portraitSelected"></div>
+            <button class="resetPortrait hidden"><i class="fas fa-undo-alt"></i></button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
