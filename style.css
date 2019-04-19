@@ -16,7 +16,7 @@ body {
 /* body,
 a:hover,
 button:hover {
-    cursor: url(https://1.bp.blogspot.com/-SrWrW7kwA7s/Vurt-S6kUzI/AAAAAAAABeA/DyHLGkjS_iQWg37IoMF-JsDYgecIWI6mg/s1600/cursor.png), progress;
+    cursor: url(https://1.bp.blogspot.com/-SrWrW7kwA7s/Vurt-S6kUzI/AAAAAAAABeA/DyHLGkjS_iQWg37IoMF-JsDYgecIWI6mg/s1600/cursor.png) -20 -20, auto;
 } */
 
 .wrap {
@@ -31,10 +31,6 @@ button:hover {
     background-size: cover;
     background-color: black;
     background-blend-mode: screen;
-}
-
-[disabled] {
-    cursor: not-allowed;
 }
 
 div.invitation {
@@ -91,12 +87,26 @@ button.start:hover {
 .summary {
     position: fixed;
     background-color: rgb(94, 32, 32);
+    -webkit-box-shadow: inset 0px 0px 45px 11px rgba(65, 22, 22, 1);
+    -moz-box-shadow: inset 0px 0px 45px 11px rgba(65, 22, 22, 1);
+    box-shadow: inset 0px 0px 45px 11px rgba(65, 22, 22, 1);
     color: aliceblue;
     min-height: 100vh;
+    max-height: 100%;
     width: 25%;
     top: 0;
     right: 0;
-    padding: 10px;
+    padding: 30px;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 1.5;
+    border: 3px solid rgb(65, 22, 22);
+}
+
+.summary h2 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .genderSelection,
@@ -111,7 +121,7 @@ button.start:hover {
     left: 35%;
     transform: translate(-50%, 0);
     padding: 5px;
-    margin: 4vh;
+    margin: 3vh;
     -webkit-box-shadow: 6px 6px 5px 0px rgba(31, 2, 2, 0.55);
     -moz-box-shadow: 6px 6px 5px 0px rgba(31, 2, 2, 0.55);
     box-shadow: 6px 6px 5px 0px rgba(31, 2, 2, 0.55);
@@ -217,10 +227,6 @@ button.gender:hover {
 }
 
 .hidden {
-    display: none;
-}
-
-#hidden {
     display: none;
 }
 

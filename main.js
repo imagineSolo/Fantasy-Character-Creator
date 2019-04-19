@@ -47,22 +47,26 @@ const resetRace = (e) => {
     raceType.textContent = "";
     raceType.style.backgroundColor = 'rgb(94, 32, 32)';
     namePanel.classList.add('hidden');
-    classPanel.classList.add('hidden');
     summaryRace.textContent = '';
+    resetGenderButton.classList.remove('hidden');
+    genderForward.classList.remove('hidden');
 }
 const resetName = (e) => {
     e.preventDefault();
     nameValue.textContent = "";
     nameValue.style.backgroundColor = 'rgb(94, 32, 32)';
     resetNameButton.classList.add('hidden');
-    classPanel.classList.add('hidden');
     showHidden.classList.remove('hidden');
+    summaryName.textContent = '';
+    resetRaceButton.classList.remove('hidden');
+    raceForward.classList.remove('hidden');
 }
 const resetClass = (e) => {
     e.preventDefault();
     classValue.textContent = "";
     classValue.style.backgroundColor = 'rgb(94, 32, 32)';
     resetClassButton.classList.add("hidden");
+    summaryClass.textContent = '';
 }
 
 genderForward.addEventListener('click', (e) => {
@@ -78,11 +82,18 @@ raceForward.addEventListener('click', (e) => {
     btnRace.getAttribute('disabled');
 });
 
+nameForward.addEventListener('click', (e) => {
+    e.preventDefault();
+    genderPanel.classList.add('hidden');
+    classPanel.classList.remove('hidden');
+    submitName.getAttribute('disabled');
+});
+
 //--FUNCTIONS--
 document.body.querySelector('.start').addEventListener('click', startGame = (e) => {
     e.preventDefault();
     invitation.classList.add('hidden');
-    summary.removeAttribute('id', 'hidden');
+    summary.classList.remove('hidden');
     genderPanel.classList.remove('hidden');
 });
 
@@ -108,7 +119,7 @@ document.body.querySelector('.raceSelection').addEventListener('click', function
         resetRaceButton.classList.remove('hidden');
         raceForward.classList.remove('hidden');
         resetGenderButton.classList.add('hidden');
-        // namePanel.classList.remove('hidden');
+        genderForward.classList.add('hidden');
         if (e.target.classList.contains('human')) {
             raceType.textContent = `You chose a human.`;
             raceType.style.backgroundColor = 'rgb(75, 19, 19)';
@@ -134,7 +145,6 @@ document.body.querySelector('.raceSelection').addEventListener('click', function
 
 document.body.querySelector('.submitName').addEventListener('click', function nameSelect(e) {
     e.preventDefault();
-    // showHidden.classList.add('hidden');
     const input = document.querySelector('input');
     const userNameSelection = input.value;
     if (userNameSelection) {
@@ -144,7 +154,8 @@ document.body.querySelector('.submitName').addEventListener('click', function na
         resetNameButton.classList.remove('hidden');
         nameForward.classList.remove('hidden');
         summaryName.textContent = userNameSelection;
-        // classPanel.classList.remove('hidden');
+        resetRaceButton.classList.add('hidden');
+        raceForward.classList.add('hidden');
     }
     if (!userNameSelection || userNameSelection === number) {
         alert('Input name!');
@@ -159,18 +170,22 @@ document.body.querySelector('.classSelection').addEventListener('click', functio
         if (event.target.classList.contains('warrior')) {
             classValue.textContent = `You chose a Warrior class!`;
             classValue.style.backgroundColor = 'rgb(75, 19, 19)';
+            summaryClass.textContent = 'Warrior'
         }
         if (event.target.classList.contains('wizard')) {
             classValue.textContent = `You chose a Wizard class!`;
             classValue.style.backgroundColor = 'rgb(75, 19, 19)';
+            summaryClass.textContent = 'Wizard';
         }
         if (event.target.classList.contains('cleric')) {
             classValue.textContent = `You chose a Cleric class!`;
             classValue.style.backgroundColor = 'rgb(75, 19, 19)';
+            summaryClass.textContent = 'Cleric';
         }
         if (event.target.classList.contains('rogue')) {
             classValue.textContent = `You chose a Rogue class!`;
             classValue.style.backgroundColor = 'rgb(75, 19, 19)';
+            summaryClass.textContent = 'Rogue';
         }
     }
 });
