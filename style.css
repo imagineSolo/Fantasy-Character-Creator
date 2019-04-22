@@ -112,7 +112,8 @@ button.start:hover {
 .genderSelection,
 .raceSelection,
 .nameSelection,
-.classSelection {
+.classSelection,
+.portraitSelection {
     position: relative;
     background-color: rgb(94, 32, 32);
     color: aliceblue;
@@ -130,7 +131,8 @@ button.start:hover {
 .nameSelected,
 .classSelected,
 .genderSelected,
-.raceSelected {
+.raceSelected,
+.portraitSelected {
     color: aliceblue;
     padding: 5px;
     margin: 15px;

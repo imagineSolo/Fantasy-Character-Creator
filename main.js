@@ -1,35 +1,37 @@
 //--GETTING ELEMENTS--
 const start = document.querySelector('.start');
-const invitation = document.querySelector('.invitation');
+invitation = document.querySelector('.invitation');
 
-const summary = document.querySelector('.summary');
-const summaryName = document.querySelector('h2.summaryName span');
-const summaryGender = document.querySelector('p.summaryGender span');
-const summaryRace = document.querySelector('p.summaryRace span');
-const summaryClass = document.querySelector('p.summaryClass span');
+summary = document.querySelector('.summary');
+summaryName = document.querySelector('h2.summaryName span');
+summaryGender = document.querySelector('p.summaryGender span');
+summaryRace = document.querySelector('p.summaryRace span');
+summaryClass = document.querySelector('p.summaryClass span');
 
-const resetGenderButton = document.querySelector('button.resetGender');
-const resetRaceButton = document.querySelector('button.resetRace');
-const resetNameButton = document.querySelector('button.resetName');
-const resetClassButton = document.querySelector('button.resetClass');
-const showHidden = document.querySelector('.hidden');
+resetGenderButton = document.querySelector('button.resetGender');
+resetRaceButton = document.querySelector('button.resetRace');
+resetNameButton = document.querySelector('button.resetName');
+resetClassButton = document.querySelector('button.resetClass');
+resetPortrait = document.querySelector('button.resetPortrait');
 
-const genderForward = document.querySelector('button.genderForward');
-const raceForward = document.querySelector('button.raceForward');
-const nameForward = document.querySelector('button.nameForward');
-const classForward = document.querySelector('button.classForward');
+genderForward = document.querySelector('button.genderForward');
+raceForward = document.querySelector('button.raceForward');
+nameForward = document.querySelector('button.nameForward');
+classForward = document.querySelector('button.classForward');
 
-const btnGender = document.querySelectorAll('button.gender');
-const btnRace = document.querySelectorAll('.charRace');
+btnGender = document.querySelectorAll('button.gender');
+btnRace = document.querySelectorAll('.charRace');
 
-const genderPanel = document.querySelector('div.genderSelection');
-const racePanel = document.querySelector('div.raceSelection');
-const namePanel = document.querySelector('div.nameSelection');
-const classPanel = document.querySelector('div.classSelection');
-const genderType = document.querySelector('.genderSelected');
-const raceType = document.querySelector('.raceSelected');
-const nameValue = document.body.querySelector('.nameSelected');
-const classValue = document.body.querySelector('.classSelected');
+genderPanel = document.querySelector('div.genderSelection');
+racePanel = document.querySelector('div.raceSelection');
+namePanel = document.querySelector('div.nameSelection');
+classPanel = document.querySelector('div.classSelection');
+portraitPanel = document.querySelector('div.portraitSelection');
+genderType = document.querySelector('.genderSelected');
+raceType = document.querySelector('.raceSelected');
+nameValue = document.body.querySelector('.nameSelected');
+classType = document.body.querySelector('.classSelected');
+portraitType = document.body.querySelector('.portraitSelected');
 
 
 //--RESET & FORWARD FUNCTIONS--
@@ -56,17 +58,20 @@ const resetName = (e) => {
     nameValue.textContent = "";
     nameValue.style.backgroundColor = 'rgb(94, 32, 32)';
     resetNameButton.classList.add('hidden');
-    showHidden.classList.remove('hidden');
+    nameForward.classList.add('hidden');
     summaryName.textContent = '';
     resetRaceButton.classList.remove('hidden');
     raceForward.classList.remove('hidden');
+    genderPanel.classList.remove('hidden');
+    classPanel.classList.add('hidden');
 }
 const resetClass = (e) => {
     e.preventDefault();
-    classValue.textContent = "";
-    classValue.style.backgroundColor = 'rgb(94, 32, 32)';
+    classType.textContent = "";
+    classType.style.backgroundColor = 'rgb(94, 32, 32)';
     resetClassButton.classList.add("hidden");
     summaryClass.textContent = '';
+    resetNameButton.classList.remove('hidden');
 }
 
 genderForward.addEventListener('click', (e) => {
@@ -79,14 +84,19 @@ genderForward.addEventListener('click', (e) => {
 raceForward.addEventListener('click', (e) => {
     e.preventDefault();
     namePanel.classList.remove('hidden');
-    btnRace.getAttribute('disabled');
 });
 
 nameForward.addEventListener('click', (e) => {
     e.preventDefault();
     genderPanel.classList.add('hidden');
     classPanel.classList.remove('hidden');
-    submitName.getAttribute('disabled');
+});
+
+classForward.addEventListener('click', (e) => {
+    e.preventDefault();
+    racePanel.classList.add('hidden');
+    namePanel.classList.add('hidden');
+    portraitPanel.classList.remove('hidden');
 });
 
 //--FUNCTIONS--
@@ -167,24 +177,26 @@ document.body.querySelector('.classSelection').addEventListener('click', functio
     if (event.target.classList.contains('charClass')) {
         resetClassButton.classList.remove('hidden');
         resetNameButton.classList.add('hidden');
+        nameForward.classList.add('hidden');
+        classForward.classList.remove('hidden');
         if (event.target.classList.contains('warrior')) {
-            classValue.textContent = `You chose a Warrior class!`;
-            classValue.style.backgroundColor = 'rgb(75, 19, 19)';
+            classType.textContent = `You chose a Warrior class!`;
+            classType.style.backgroundColor = 'rgb(75, 19, 19)';
             summaryClass.textContent = 'Warrior'
         }
         if (event.target.classList.contains('wizard')) {
-            classValue.textContent = `You chose a Wizard class!`;
-            classValue.style.backgroundColor = 'rgb(75, 19, 19)';
+            classType.textContent = `You chose a Wizard class!`;
+            classType.style.backgroundColor = 'rgb(75, 19, 19)';
             summaryClass.textContent = 'Wizard';
         }
         if (event.target.classList.contains('cleric')) {
-            classValue.textContent = `You chose a Cleric class!`;
-            classValue.style.backgroundColor = 'rgb(75, 19, 19)';
+            classType.textContent = `You chose a Cleric class!`;
+            classType.style.backgroundColor = 'rgb(75, 19, 19)';
             summaryClass.textContent = 'Cleric';
         }
         if (event.target.classList.contains('rogue')) {
-            classValue.textContent = `You chose a Rogue class!`;
-            classValue.style.backgroundColor = 'rgb(75, 19, 19)';
+            classType.textContent = `You chose a Rogue class!`;
+            classType.style.backgroundColor = 'rgb(75, 19, 19)';
             summaryClass.textContent = 'Rogue';
         }
     }
