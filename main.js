@@ -31,7 +31,6 @@ genderType = document.querySelector('.genderSelected');
 raceType = document.querySelector('.raceSelected');
 nameValue = document.body.querySelector('.nameSelected');
 classType = document.body.querySelector('.classSelected');
-portraitType = document.body.querySelector('.portraitSelected');
 
 
 //--RESET & FORWARD FUNCTIONS--
@@ -43,7 +42,15 @@ const resetGender = (e) => {
     summaryGender.textContent = '';
     document.getElementById('btnFemale').disabled = !true;
     document.getElementById('btnMale').disabled = !true;
-}
+    const selectedGender = document.querySelectorAll('div.genderSelection button.selected');
+    for (var i = 0; i < selectedGender.length; i++) {
+        selectedGender[i].classList.remove('selected');
+    }
+    const activeGender = document.querySelectorAll('div.genderSelection button.active');
+    for (var i = 0; i < activeGender.length; i++) {
+        activeGender[i].classList.remove('active');
+    }
+};
 const resetRace = (e) => {
     e.preventDefault();
     raceType.textContent = "";
@@ -52,6 +59,18 @@ const resetRace = (e) => {
     summaryRace.textContent = '';
     resetGenderButton.classList.remove('hidden');
     genderForward.classList.remove('hidden');
+    document.getElementById('human').disabled = !true;
+    document.getElementById('elf').disabled = !true;
+    document.getElementById('dwarf').disabled = !true;
+    document.getElementById('halfling').disabled = !true;
+    const selectedRace = document.querySelectorAll('div.raceSelection button.selected');
+    for (var i = 0; i < selectedRace.length; i++) {
+        selectedRace[i].classList.remove('selected');
+    }
+    const activeRace = document.querySelectorAll('div.raceSelection button.active');
+    for (var i = 0; i < activeRace.length; i++) {
+        activeRace[i].classList.remove('active');
+    }
 }
 const resetName = (e) => {
     e.preventDefault();
@@ -77,8 +96,6 @@ const resetClass = (e) => {
 genderForward.addEventListener('click', (e) => {
     e.preventDefault();
     racePanel.classList.remove('hidden');
-    document.getElementById('btnFemale').disabled = true;
-    document.getElementById('btnMale').disabled = true;
 });
 
 raceForward.addEventListener('click', (e) => {
@@ -106,11 +123,16 @@ document.body.querySelector('.start').addEventListener('click', startGame = (e) 
     summary.classList.remove('hidden');
     genderPanel.classList.remove('hidden');
 });
+const selected = document.getElementsByClassName('selected');
 
 btnGender.forEach((gender) => gender.addEventListener('click', function genderSelect(e) {
     if (e.target.classList.contains('gender')) {
         resetGenderButton.classList.remove('hidden');
         genderForward.classList.remove('hidden');
+        this.classList.add('selected');
+        this.classList.add('active');
+        document.getElementById('btnFemale').disabled = true;
+        document.getElementById('btnMale').disabled = true;
         if (e.target.classList.contains('female')) {
             genderType.textContent = 'Female';
             genderType.style.backgroundColor = 'rgb(75, 19, 19)';
@@ -130,6 +152,12 @@ document.body.querySelector('.raceSelection').addEventListener('click', function
         raceForward.classList.remove('hidden');
         resetGenderButton.classList.add('hidden');
         genderForward.classList.add('hidden');
+        e.target.classList.add('selected');
+        e.target.classList.add('active');
+        document.getElementById('human').disabled = true;
+        document.getElementById('elf').disabled = true;
+        document.getElementById('dwarf').disabled = true;
+        document.getElementById('halfling').disabled = true;
         if (e.target.classList.contains('human')) {
             raceType.textContent = `You chose a human.`;
             raceType.style.backgroundColor = 'rgb(75, 19, 19)';
@@ -167,7 +195,7 @@ document.body.querySelector('.submitName').addEventListener('click', function na
         resetRaceButton.classList.add('hidden');
         raceForward.classList.add('hidden');
     }
-    if (!userNameSelection || userNameSelection === number) {
+    if (typeof userNameSelection === 'number' || !userNameSelection) {
         alert('Input name!');
         nameValue.textContent = "";
     }
@@ -201,6 +229,10 @@ document.body.querySelector('.classSelection').addEventListener('click', functio
         }
     }
 });
+
+// const portraitSelection = () => {
+//     if ()
+// }
 
 document.body.querySelector('.resetGender').addEventListener('click', resetGender);
 document.body.querySelector('.resetRace').addEventListener('click', resetRace);

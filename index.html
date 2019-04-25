@@ -8,8 +8,8 @@
     <title>Fantasy Character Creator</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=MedievalSharp&amp;subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
 <body>
@@ -27,6 +27,7 @@
             <p class="summaryGender">Gender: <span></span></p>
             <p class="summaryRace">Race: <span></span></p>
             <p class="summaryClass">Class: <span></span></p>
+            <img class="summaryPortrait hidden" src="">
         </div>
         <div class="genderSelection hidden">
             <h2>First choose your character's gender:</h2>
@@ -40,13 +41,13 @@
         </div>
         <div class="raceSelection hidden">
             <h2>Choose race:</h2>
-            <button class="charRace human" title="Humans are the most versatile. No modificators.">Human</button>
-            <button class="charRace elf">Elf</button>
-            <button class="charRace dwarf">Dwarf</button>
-            <button class="charRace halfling">Halfling</button>
-            <div class="raceSelected"></div>
-            <button class="resetRace hidden"><i class="fas fa-undo-alt"></i></button>
-            <button class="raceForward hidden"><i class="fas fa-arrow-down"></i></button>
+            <button id="human" class="charRace human" title="Humans are the most versatile. No modificators.">Human</>
+                <button id="elf" class="charRace elf">Elf</button>
+                <button id="dwarf" class="charRace dwarf">Dwarf</button>
+                <button id="halfling" class="charRace halfling">Halfling</button>
+                <div class="raceSelected"></div>
+                <button class="resetRace hidden"><i class="fas fa-undo-alt"></i></button>
+                <button class="raceForward hidden"><i class="fas fa-arrow-down"></i></button>
         </div>
         <div class="nameSelection hidden">
             <h2>Write your character's name:</h2>
@@ -69,8 +70,12 @@
         </div>
         <div class="portraitSelection hidden">
             <h2>Choose a portrait:</h2>
-
-            <div class="portraitSelected"></div>
+            <div class="portraits">
+                <div id="portrait1"><img src=''></div>
+                <div id="portrait2"><img src=''></div>
+                <div id="portrait3"><img src=''></div>
+                <div id="portrait4"><img src=''></div>
+            </div>
             <button class="resetPortrait hidden"><i class="fas fa-undo-alt"></i></button>
         </div>
     </div>
