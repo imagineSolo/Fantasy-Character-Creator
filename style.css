@@ -149,7 +149,7 @@ button.start:hover {
 
 .portraits div {
     width: 110px;
-    height: 180px;
+    height: 170px;
     margin: 1vw;
     border: 1px solid orange;
 }
@@ -200,7 +200,8 @@ button.gender:hover {
 .resetGender,
 .resetRace,
 .resetName,
-.resetClass {
+.resetClass,
+.resetPortrait {
     position: absolute;
     bottom: 10%;
     right: 70px;
@@ -220,7 +221,8 @@ button.gender:hover {
 .resetGender,
 .resetRace,
 .resetName,
-.resetClass:hover {
+.resetClass,
+.resetPortrait:hover {
     background-color: rgb(54, 22, 22);
     cursor: pointer;
 }
@@ -228,7 +230,8 @@ button.gender:hover {
 .genderForward,
 .raceForward,
 .nameForward,
-.classForward {
+.classForward,
+.portraitForward {
     position: absolute;
     bottom: 10%;
     right: 30px;

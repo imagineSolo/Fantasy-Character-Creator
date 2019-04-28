@@ -7,6 +7,7 @@ summaryName = document.querySelector('h2.summaryName span');
 summaryGender = document.querySelector('p.summaryGender span');
 summaryRace = document.querySelector('p.summaryRace span');
 summaryClass = document.querySelector('p.summaryClass span');
+summaryPortrait = document.querySelector('img.summaryPortrait');
 
 resetGenderButton = document.querySelector('button.resetGender');
 resetRaceButton = document.querySelector('button.resetRace');
@@ -18,9 +19,11 @@ genderForward = document.querySelector('button.genderForward');
 raceForward = document.querySelector('button.raceForward');
 nameForward = document.querySelector('button.nameForward');
 classForward = document.querySelector('button.classForward');
+portraitForward = document.querySelector('button.portraitForward');
 
 btnGender = document.querySelectorAll('button.gender');
 btnRace = document.querySelectorAll('.charRace');
+portraitSelect = document.querySelectorAll('.portraits div');
 
 genderPanel = document.querySelector('div.genderSelection');
 racePanel = document.querySelector('div.raceSelection');
@@ -29,8 +32,13 @@ classPanel = document.querySelector('div.classSelection');
 portraitPanel = document.querySelector('div.portraitSelection');
 genderType = document.querySelector('.genderSelected');
 raceType = document.querySelector('.raceSelected');
-nameValue = document.body.querySelector('.nameSelected');
-classType = document.body.querySelector('.classSelected');
+nameValue = document.querySelector('.nameSelected');
+classType = document.querySelector('.classSelected');
+
+portrait1 = document.getElementById('portrait1');
+portrait2 = document.getElementById('portrait2');
+portrait3 = document.getElementById('portrait3');
+portrait4 = document.getElementById('portrait4');
 
 
 //--RESET & FORWARD FUNCTIONS--
@@ -114,6 +122,7 @@ classForward.addEventListener('click', (e) => {
     racePanel.classList.add('hidden');
     namePanel.classList.add('hidden');
     portraitPanel.classList.remove('hidden');
+    portraitSelection();
 });
 
 //--FUNCTIONS--
@@ -230,9 +239,79 @@ document.body.querySelector('.classSelection').addEventListener('click', functio
     }
 });
 
-// const portraitSelection = () => {
-//     if ()
-// }
+const portraitSelection = () => {
+    const img1 = new Image();
+    const img2 = new Image();
+    const img3 = new Image();
+    const img4 = new Image();
+    img1.onload = function () {
+        portrait1.appendChild(img1);
+    };
+    img2.onload = function () {
+        portrait2.appendChild(img2);
+    };
+    img3.onload = function () {
+        portrait3.appendChild(img3);
+    };
+    img4.onload = function () {
+        portrait4.appendChild(img4);
+    };
+    if (summaryGender.textContent === 'Female' && summaryRace.textContent === 'Human') {
+        img1.src = 'img/portraits/Human/Female/humFemale01.bmp';
+        img2.src = 'img/portraits/Human/Female/humFemale02.bmp';
+        img3.src = 'img/portraits/Human/Female/humFemale03.bmp';
+        img4.src = 'img/portraits/Human/Female/humFemale04.bmp';
+    }
+    if (summaryGender.textContent === 'Male' && summaryRace.textContent === 'Human') {
+        img1.src = 'img/portraits/Human/Male/humMale01.bmp';
+        img2.src = 'img/portraits/Human/Male/humMale02.bmp';
+        img3.src = 'img/portraits/Human/Male/humMale03.bmp';
+        img4.src = 'img/portraits/Human/Male/humMale04.bmp';
+    }
+    if (summaryGender.textContent === 'Female' && summaryRace.textContent === 'Elf') {
+        img1.src = 'img/portraits/Elf/Female/elfFemale01.bmp';
+        img2.src = 'img/portraits/Elf/Female/elfFemale02.bmp';
+        img3.src = 'img/portraits/Elf/Female/elfFemale03.bmp';
+        img4.src = 'img/portraits/Elf/Female/elfFemale04.bmp';
+    }
+    if (summaryGender.textContent === 'Male' && summaryRace.textContent === 'Elf') {
+        img1.src = 'img/portraits/Elf/Male/elfMale01.bmp';
+        img2.src = 'img/portraits/Elf/Male/elfMale02.bmp';
+        img3.src = 'img/portraits/Elf/Male/elfMale03.bmp';
+        img4.src = 'img/portraits/Elf/Male/elfMale04.bmp';
+    }
+    if (summaryGender.textContent === 'Female' && summaryRace.textContent === 'Dwarf') {
+        img1.src = 'img/portraits/Dwarf/Female/dwarfFemale01.bmp';
+        img2.src = 'img/portraits/Dwarf/Female/dwarfFemale02.bmp';
+        img3.src = 'img/portraits/Dwarf/Female/dwarfFemale03.bmp';
+        img4.src = 'img/portraits/Dwarf/Female/dwarfFemale04.bmp';
+    }
+    if (summaryGender.textContent === 'Male' && summaryRace.textContent === 'Dwarf') {
+        img1.src = 'img/portraits/Dwarf/Male/dwarfMale01.bmp';
+        img2.src = 'img/portraits/Dwarf/Male/dwarfMale02.bmp';
+        img3.src = 'img/portraits/Dwarf/Male/dwarfMale03.bmp';
+        img4.src = 'img/portraits/Dwarf/Male/dwarfMale04.bmp';
+    }
+    if (summaryGender.textContent === 'Female' && summaryRace.textContent === 'Halfling') {
+        img1.src = 'img/portraits/Halfling/Female/halfFemale01.bmp';
+        img2.src = 'img/portraits/Halfling/Female/halfFemale02.bmp';
+        img3.src = 'img/portraits/Halfling/Female/halfFemale03.bmp';
+        img4.src = 'img/portraits/Halfling/Female/halfFemale04.bmp';
+    }
+    if (summaryGender.textContent === 'Male' && summaryRace.textContent === 'Halfling') {
+        img1.src = 'img/portraits/Halfling/Male/halfMale01.bmp';
+        img2.src = 'img/portraits/Halfling/Male/halfMale02.bmp';
+        img3.src = 'img/portraits/Halfling/Male/halfMale03.bmp';
+        img4.src = 'img/portraits/Halfling/Male/halfMale04.bmp';
+    }
+}
+
+portraitSelect.forEach((portrait) => portrait.addEventListener('click', function portraitSelect(e) {
+    resetPortrait.classList.remove('hidden');
+    portraitForward.classList.remove('hidden');
+    e.target.classList.add('active');
+
+}));
 
 document.body.querySelector('.resetGender').addEventListener('click', resetGender);
 document.body.querySelector('.resetRace').addEventListener('click', resetRace);
