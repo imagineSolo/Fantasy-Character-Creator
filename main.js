@@ -1,4 +1,4 @@
-//--GETTING ELEMENTS--
+//--GETTING ELEMENTS--//
 const start = document.querySelector('.start');
 invitation = document.querySelector('.invitation');
 
@@ -13,7 +13,7 @@ resetGenderButton = document.querySelector('button.resetGender');
 resetRaceButton = document.querySelector('button.resetRace');
 resetNameButton = document.querySelector('button.resetName');
 resetClassButton = document.querySelector('button.resetClass');
-resetPortrait = document.querySelector('button.resetPortrait');
+resetPortraitButton = document.querySelector('button.resetPortrait');
 
 genderForward = document.querySelector('button.genderForward');
 raceForward = document.querySelector('button.raceForward');
@@ -23,13 +23,15 @@ portraitForward = document.querySelector('button.portraitForward');
 
 btnGender = document.querySelectorAll('button.gender');
 btnRace = document.querySelectorAll('.charRace');
-portraitSelect = document.querySelectorAll('.portraits div');
+portraitSelect = document.querySelectorAll('.portraits button');
 
 genderPanel = document.querySelector('div.genderSelection');
 racePanel = document.querySelector('div.raceSelection');
 namePanel = document.querySelector('div.nameSelection');
 classPanel = document.querySelector('div.classSelection');
 portraitPanel = document.querySelector('div.portraitSelection');
+attributePanel = document.querySelector('div.attributeSelection');
+
 genderType = document.querySelector('.genderSelected');
 raceType = document.querySelector('.raceSelected');
 nameValue = document.querySelector('.nameSelected');
@@ -40,22 +42,23 @@ portrait2 = document.getElementById('portrait2');
 portrait3 = document.getElementById('portrait3');
 portrait4 = document.getElementById('portrait4');
 
-
-//--RESET & FORWARD FUNCTIONS--
+//--RESET FUNCTIONS--//
 const resetGender = (e) => {
     e.preventDefault();
     genderType.textContent = "";
     genderType.style.backgroundColor = 'rgb(94, 32, 32)';
     racePanel.classList.add('hidden');
     summaryGender.textContent = '';
+    resetGenderButton.classList.add('hidden');
+    genderForward.classList.add('hidden');
     document.getElementById('btnFemale').disabled = !true;
     document.getElementById('btnMale').disabled = !true;
     const selectedGender = document.querySelectorAll('div.genderSelection button.selected');
-    for (var i = 0; i < selectedGender.length; i++) {
+    for (let i = 0; i < selectedGender.length; i++) {
         selectedGender[i].classList.remove('selected');
     }
     const activeGender = document.querySelectorAll('div.genderSelection button.active');
-    for (var i = 0; i < activeGender.length; i++) {
+    for (let i = 0; i < activeGender.length; i++) {
         activeGender[i].classList.remove('active');
     }
 };
@@ -72,11 +75,11 @@ const resetRace = (e) => {
     document.getElementById('dwarf').disabled = !true;
     document.getElementById('halfling').disabled = !true;
     const selectedRace = document.querySelectorAll('div.raceSelection button.selected');
-    for (var i = 0; i < selectedRace.length; i++) {
+    for (let i = 0; i < selectedRace.length; i++) {
         selectedRace[i].classList.remove('selected');
     }
     const activeRace = document.querySelectorAll('div.raceSelection button.active');
-    for (var i = 0; i < activeRace.length; i++) {
+    for (let i = 0; i < activeRace.length; i++) {
         activeRace[i].classList.remove('active');
     }
 }
@@ -96,10 +99,45 @@ const resetClass = (e) => {
     e.preventDefault();
     classType.textContent = "";
     classType.style.backgroundColor = 'rgb(94, 32, 32)';
-    resetClassButton.classList.add("hidden");
+    resetClassButton.classList.add('hidden');
+    classForward.classList.add('hidden');
     summaryClass.textContent = '';
     resetNameButton.classList.remove('hidden');
+    portraitSelection.classList.add('hidden');
+    document.getElementById('warrior').disabled = !true;
+    document.getElementById('wizard').disabled = !true;
+    document.getElementById('cleric').disabled = !true;
+    document.getElementById('rogue').disabled = !true;
+    const selectedClass = document.querySelectorAll('div.classSelection button.selected');
+    for (let i = 0; i < selectedClass.length; i++) {
+        selectedClass[i].classList.remove('selected');
+    }
+    const activeClass = document.querySelectorAll('div.classSelection button.active');
+    for (let i = 0; i < activeClass.length; i++) {
+        activeClass[i].classList.remove('active');
+    }
 }
+
+const resetPortrait = (e) => {
+    e.preventDefault();
+    summaryPortrait.classList.add('hidden');
+    resetPortraitButton.classList.add('hidden');
+    portraitForward.classList.add('hidden');
+    document.getElementById('portrait1').disabled = !true;
+    document.getElementById('portrait2').disabled = !true;
+    document.getElementById('portrait3').disabled = !true;
+    document.getElementById('portrait4').disabled = !true;
+    const selectedPortrait = document.querySelectorAll('div.portraitSelection img.selected');
+    for (let i = 0; i < selectedPortrait.length; i++) {
+        selectedPortrait[i].classList.remove('selected');
+    }
+    const activePortrait = document.querySelectorAll('div.portraitSelection img.active');
+    for (let i = 0; i < activePortrait.length; i++) {
+        activePortrait[i].classList.remove('active');
+    }
+}
+
+//--FORWARD FUNCTIONS--//
 
 genderForward.addEventListener('click', (e) => {
     e.preventDefault();
@@ -125,7 +163,14 @@ classForward.addEventListener('click', (e) => {
     portraitSelection();
 });
 
-//--FUNCTIONS--
+portraitForward.addEventListener('click', (e) => {
+    e.preventDefault();
+    classPanel.classList.add('hidden');
+    portraitPanel.classList.add('hidden');
+    attributePanel.classList.remove('hidden');
+});
+
+//--MAIN FUNCTIONS--
 document.body.querySelector('.start').addEventListener('click', startGame = (e) => {
     e.preventDefault();
     invitation.classList.add('hidden');
@@ -210,28 +255,34 @@ document.body.querySelector('.submitName').addEventListener('click', function na
     }
 });
 
-document.body.querySelector('.classSelection').addEventListener('click', function classSelect(event) {
-    if (event.target.classList.contains('charClass')) {
+document.body.querySelector('.classSelection').addEventListener('click', function classSelect(e) {
+    if (e.target.classList.contains('charClass')) {
         resetClassButton.classList.remove('hidden');
+        classForward.classList.remove('hidden');
         resetNameButton.classList.add('hidden');
         nameForward.classList.add('hidden');
-        classForward.classList.remove('hidden');
-        if (event.target.classList.contains('warrior')) {
+        e.target.classList.add('selected');
+        e.target.classList.add('active');
+        document.getElementById('warrior').disabled = true;
+        document.getElementById('wizard').disabled = true;
+        document.getElementById('cleric').disabled = true;
+        document.getElementById('rogue').disabled = true;
+        if (e.target.classList.contains('warrior')) {
             classType.textContent = `You chose a Warrior class!`;
             classType.style.backgroundColor = 'rgb(75, 19, 19)';
             summaryClass.textContent = 'Warrior'
         }
-        if (event.target.classList.contains('wizard')) {
+        if (e.target.classList.contains('wizard')) {
             classType.textContent = `You chose a Wizard class!`;
             classType.style.backgroundColor = 'rgb(75, 19, 19)';
             summaryClass.textContent = 'Wizard';
         }
-        if (event.target.classList.contains('cleric')) {
+        if (e.target.classList.contains('cleric')) {
             classType.textContent = `You chose a Cleric class!`;
             classType.style.backgroundColor = 'rgb(75, 19, 19)';
             summaryClass.textContent = 'Cleric';
         }
-        if (event.target.classList.contains('rogue')) {
+        if (e.target.classList.contains('rogue')) {
             classType.textContent = `You chose a Rogue class!`;
             classType.style.backgroundColor = 'rgb(75, 19, 19)';
             summaryClass.textContent = 'Rogue';
@@ -307,13 +358,37 @@ const portraitSelection = () => {
 }
 
 portraitSelect.forEach((portrait) => portrait.addEventListener('click', function portraitSelect(e) {
-    resetPortrait.classList.remove('hidden');
+    resetPortraitButton.classList.remove('hidden');
     portraitForward.classList.remove('hidden');
+    e.target.classList.add('selected');
     e.target.classList.add('active');
-
+    document.getElementById('portrait1').disabled = true;
+    document.getElementById('portrait2').disabled = true;
+    document.getElementById('portrait3').disabled = true;
+    document.getElementById('portrait4').disabled = true;
+    summaryPortrait.classList.remove('hidden');
+    summaryPortrait.src = e.target.src;
 }));
+
+const attributeSelect = () => {
+    const strengthPlus = document.getElementById('strPlus');
+    dexterityPlus = document.getElementById('dexPlus');
+    constitutionPlus = document.getElementById('conPlus');
+    intelligencePlus = document.getElementById('intPlus');
+    charismaPlus = document.getElementById('chaPlus');
+    willpowerPlus = document.getElementById('willPlus');
+    strengthMinus = document.getElementById('strMinus');
+    dexterityMinus = document.getElementById('dexMinus');
+    constitutionMinus = document.getElementById('conMinus');
+    intelligenceMinus = document.getElementById('intMinus');
+    charismaMinus = document.getElementById('chaMinus');
+    willpowerMinus = document.getElementById('willMinus');
+
+
+}
 
 document.body.querySelector('.resetGender').addEventListener('click', resetGender);
 document.body.querySelector('.resetRace').addEventListener('click', resetRace);
 document.body.querySelector('.resetName').addEventListener('click', resetName);
 document.body.querySelector('.resetClass').addEventListener('click', resetClass);
+document.body.querySelector('.resetPortrait').addEventListener('click', resetPortrait);

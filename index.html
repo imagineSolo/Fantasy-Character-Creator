@@ -28,6 +28,14 @@
             <p class="summaryRace">Race: <span></span></p>
             <p class="summaryClass">Class: <span></span></p>
             <img class="summaryPortrait hidden" src="">
+            <p class="summaryAttributes">
+                Strength: <span id="summaryStrength"></span>
+                Dexterity: <span id="summaryDexterity"></span>
+                Constitution: <span id="summaryConstitution"></span>
+                Intelligence: <span id="summaryIntelligence"></span>
+                Charisma: <span id="summaryCharisma"></span>
+                Willpower: <span id="summaryWillpower"></span>
+            </p>
         </div>
         <div class="genderSelection hidden">
             <h2>First choose your character's gender:</h2>
@@ -60,24 +68,77 @@
         </div>
         <div class="classSelection hidden">
             <h2>Choose a class:</h2>
-            <button class="charClass warrior">Warrior</button>
-            <button class="charClass wizard">Wizard</button>
-            <button class="charClass cleric">Cleric</button>
-            <button class="charClass rogue">Rogue</button>
+            <button id="warrior" class="charClass warrior">Warrior</button>
+            <button id="wizard" class="charClass wizard">Wizard</button>
+            <button id="cleric" class="charClass cleric">Cleric</button>
+            <button id="rogue" class="charClass rogue">Rogue</button>
             <div class="classSelected"></div>
             <button class="resetClass hidden"><i class="fas fa-undo-alt"></i></button>
             <button class="classForward hidden"><i class="fas fa-arrow-down"></i></button>
         </div>
         <div class="portraitSelection hidden">
             <h2>Choose a portrait:</h2>
-            <div class="portraits">
-                <div id="portrait1"><img src=''></div>
-                <div id="portrait2"><img src=''></div>
-                <div id="portrait3"><img src=''></div>
-                <div id="portrait4"><img src=''></div>
+            <div id="portraits" class="portraits">
+                <button id="portrait1"><img src=''></button>
+                <button id="portrait2"><img src=''></button>
+                <button id="portrait3"><img src=''></button>
+                <button id="portrait4"><img src=''></button>
             </div>
             <button class="resetPortrait hidden"><i class="fas fa-undo-alt"></i></button>
             <button class="portraitForward hidden"><i class="fas fa-arrow-down"></i></button>
+        </div>
+        <div class="attributeSelection hidden">
+            <h2>Select your character's attributes:</h2>
+            <p class="description">Shape your character by spending your free points on the attributes. You can also
+                lower an attribute value below 10 to gain some extra points.</p>
+            <div class="results">
+                <span>3 - 4: very low attribute</span>
+                <span>5 - 8: low</span>
+                <span>9 - 11: average</span>
+                <span>12 - 15: high</span>
+                <span>16 - 19: very high</span>
+                <span>20+: incredible</span>
+            </div>
+            <div class="statistics">
+                <div class="attribute" id="strength">
+                    <p>Strength</p>
+                    <button id="strPlus" class="plus">+</button>
+                    <span>10</span>
+                    <button id="StrMinus" class="minus">-</button>
+                </div>
+                <div class="attribute" id="dexterity">
+                    <p>Dexterity</p>
+                    <button id="dexPlus" class="plus">+</button>
+                    <span>10</span>
+                    <button id="dexMinus" class="minus">-</button>
+                </div>
+                <div class="attribute" id="constitution">
+                    <p>Constitution</p>
+                    <button id="conPlus" class="plus">+</button>
+                    <span>10</span>
+                    <button id="conMinus" class="minus">-</button>
+                </div>
+                <div class="attribute" id="intelligence">
+                    <p>Intelligence</p>
+                    <button id="intPlus" class="plus">+</button>
+                    <span>10</span>
+                    <button id="intMinus" class="minus">-</button>
+                </div>
+                <div class="attribute" id="charisma">
+                    <p>Charisma</p>
+                    <button id="chaPlus" class="plus">+</button>
+                    <span>10</span>
+                    <button id="chaMinus" class="minus">-</button>
+                </div>
+                <div class="attribute" id="willpower">
+                    <p>Willpower</p>
+                    <button id="willPlus" class="plus">+</button>
+                    <span>10</span>
+                    <button id="willMinus" class="minus">-</button>
+                </div>
+            </div>
+            <p class="points-left">Points left: <span>5</span></p>
+            <button class="attributeForward"><i class="fas fa-arrow-down"></i></button>
         </div>
     </div>
     <script src="main.js"></script>

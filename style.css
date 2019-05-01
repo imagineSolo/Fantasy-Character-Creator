@@ -86,34 +86,51 @@ button.start:hover {
 
 .summary {
     position: fixed;
-    background-color: rgb(94, 32, 32);
-    -webkit-box-shadow: inset 0px 0px 45px 11px rgba(65, 22, 22, 1);
-    -moz-box-shadow: inset 0px 0px 45px 11px rgba(65, 22, 22, 1);
-    box-shadow: inset 0px 0px 45px 11px rgba(65, 22, 22, 1);
-    color: aliceblue;
     min-height: 100vh;
-    max-height: 100%;
-    width: 25%;
+    max-height: 100vh;
+    width: 25vw;
     top: 0;
     right: 0;
-    padding: 30px;
+    padding: 25px;
     text-align: justify;
     font-size: 20px;
     line-height: 1.5;
     border: 3px solid rgb(65, 22, 22);
+    background-color: rgb(94, 32, 32);
+    -webkit-box-shadow: inset 0px 0px 48px 11px rgb(53, 17, 17);
+    -moz-box-shadow: inset 0px 0px 48px 11px rgb(53, 17, 17);
+    box-shadow: inset 0px 0px 48px 11px rgb(53, 17, 17);
+    color: aliceblue;
 }
 
-.summary h2 {
-    font-size: 30px;
+.summaryName {
+    font-size: 40px;
     font-weight: bold;
     text-align: center;
+}
+
+p.summaryAttributes {
+    display: flex;
+    flex-direction: column;
+    padding-top: 32%;
+    line-height: 1.8;
+}
+
+img.summaryPortrait {
+    position: fixed;
+    top: 18%;
+    right: 4%;
+    width: 110px;
+    height: 170px;
+    border: 1px solid orange;
 }
 
 .genderSelection,
 .raceSelection,
 .nameSelection,
 .classSelection,
-.portraitSelection {
+.portraitSelection,
+.attributeSelection {
     position: relative;
     background-color: rgb(94, 32, 32);
     color: aliceblue;
@@ -126,6 +143,80 @@ button.start:hover {
     -webkit-box-shadow: 6px 6px 5px 0px rgba(31, 2, 2, 0.55);
     -moz-box-shadow: 6px 6px 5px 0px rgba(31, 2, 2, 0.55);
     box-shadow: 6px 6px 5px 0px rgba(31, 2, 2, 0.55);
+}
+
+div.portraitSelection {
+    height: 48vh;
+}
+
+div.attributeSelection {
+    width: 60%;
+    height: 90vh;
+    left: 33.5%;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.5;
+    text-align: left;
+    padding: 1vh;
+    margin: 1vh;
+}
+
+.statistics {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.attribute {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh;
+}
+
+div.attributeSelection button.plus,
+div.attributeSelection button.minus {
+    display: flex;
+    flex-direction: column;
+    font-size: 50px;
+    font-family: inherit;
+    margin: 1vh;
+    border: 0;
+    color: aliceblue;
+    background-color: rgb(94, 32, 32);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.85);
+}
+
+div.attributeSelection span {
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+    font-size: 30px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.85);
+}
+
+div.attributeSelection p {
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+    font-size: 24px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.85);
+}
+
+div.attributeSelection p.description,
+div.attributeSelection .results span {
+    font-size: 14px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.85);
+}
+
+button.plus,
+button.minus:hover {
+    cursor: pointer;
 }
 
 .nameSelected,
@@ -147,26 +238,24 @@ button.start:hover {
     padding-bottom: 1vw;
 }
 
-.portraits div {
-    width: 110px;
-    height: 170px;
+.portraits button {
+    width: auto;
+    height: auto;
+    padding: 0;
     margin: 1vw;
-    border: 1px solid orange;
+    border: none;
+    border-radius: 20%;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-img.summaryPortrait {
-    position: fixed;
-    top: 16%;
-    right: 4%;
-    width: 110px;
-    height: 180px;
-}
-
-label {
-    font-size: 20px;
-    padding: 10px;
-    margin: 10px;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.85);
+.portraits button img {
+    border-radius: 3%;
+    -webkit-box-shadow: 10px 10px 11px -6px rgba(18, 1, 1, 0.7);
+    -moz-box-shadow: 10px 10px 11px -6px rgba(18, 1, 1, 0.7);
+    box-shadow: 10px 10px 11px -6px rgba(18, 1, 1, 0.7);
 }
 
 input {
@@ -174,7 +263,12 @@ input {
     width: 150px;
     margin: 10px;
     border: 2px solid black;
+    background-color: burlywood;
     border-radius: 5%;
+}
+
+input:focus {
+    background-color: rgb(247, 220, 186);
 }
 
 button.gender {
@@ -203,8 +297,8 @@ button.gender:hover {
 .resetClass,
 .resetPortrait {
     position: absolute;
-    bottom: 10%;
-    right: 70px;
+    bottom: 12%;
+    right: 9%;
     height: 30px;
     width: auto;
     background-color: rgb(36, 15, 15);
@@ -216,6 +310,14 @@ button.gender:hover {
     text-align: center;
     line-height: 1;
     transition: 0.6s;
+}
+
+button.resetPortrait {
+    bottom: 6%;
+}
+
+button.portraitForward {
+    bottom: 6%;
 }
 
 .resetGender,
@@ -231,12 +333,13 @@ button.gender:hover {
 .raceForward,
 .nameForward,
 .classForward,
-.portraitForward {
+.portraitForward,
+.attributeForward {
     position: absolute;
-    bottom: 10%;
-    right: 30px;
+    bottom: 12%;
+    right: 3%;
     height: 30px;
-    width: auto;
+    width: 30px;
     background-color: rgb(36, 15, 15);
     color: aliceblue;
     padding: 5px;
@@ -249,9 +352,8 @@ button.gender:hover {
     cursor: pointer;
 }
 
-.next:hover {
-    background-color: rgb(54, 22, 22);
-    cursor: pointer;
+button.attributeForward {
+    bottom: 4%;
 }
 
 .hidden {
@@ -259,9 +361,9 @@ button.gender:hover {
 }
 
 .active {
-    -webkit-box-shadow: 0px 0px 15px 5px rgba(255, 187, 0, 0.81);
-    -moz-box-shadow: 0px 0px 15px 5px rgba(255, 187, 0, 0.81);
-    box-shadow: 0px 0px 15px 5px rgba(255, 187, 0, 0.81);
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(255, 187, 0, 0.81) !important;
+    -moz-box-shadow: 0px 0px 15px 5px rgba(255, 187, 0, 0.81) !important;
+    box-shadow: 0px 0px 15px 5px rgba(255, 187, 0, 0.81) !important;
 }
 
 button.submitName {
