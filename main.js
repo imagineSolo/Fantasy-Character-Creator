@@ -36,11 +36,14 @@ genderType = document.querySelector('.genderSelected');
 raceType = document.querySelector('.raceSelected');
 nameValue = document.querySelector('.nameSelected');
 classType = document.querySelector('.classSelected');
+attributeValue = document.querySelectorAll('.attribute span')
 
 portrait1 = document.getElementById('portrait1');
 portrait2 = document.getElementById('portrait2');
 portrait3 = document.getElementById('portrait3');
 portrait4 = document.getElementById('portrait4');
+
+pointsLeft = document.querySelector('.pointsLeft span');
 
 //--RESET FUNCTIONS--//
 const resetGender = (e) => {
@@ -168,6 +171,7 @@ portraitForward.addEventListener('click', (e) => {
     classPanel.classList.add('hidden');
     portraitPanel.classList.add('hidden');
     attributePanel.classList.remove('hidden');
+    attributeSelect();
 });
 
 //--MAIN FUNCTIONS--
@@ -371,20 +375,89 @@ portraitSelect.forEach((portrait) => portrait.addEventListener('click', function
 }));
 
 const attributeSelect = () => {
-    const strengthPlus = document.getElementById('strPlus');
-    dexterityPlus = document.getElementById('dexPlus');
-    constitutionPlus = document.getElementById('conPlus');
-    intelligencePlus = document.getElementById('intPlus');
-    charismaPlus = document.getElementById('chaPlus');
-    willpowerPlus = document.getElementById('willPlus');
-    strengthMinus = document.getElementById('strMinus');
-    dexterityMinus = document.getElementById('dexMinus');
-    constitutionMinus = document.getElementById('conMinus');
-    intelligenceMinus = document.getElementById('intMinus');
-    charismaMinus = document.getElementById('chaMinus');
-    willpowerMinus = document.getElementById('willMinus');
+    document.getElementById('strPlus').addEventListener('click', () => {
+        if (parseInt(pointsLeft.innerHTML) > 0 && document.getElementById('strValue').innerHTML < '20') {
+            document.getElementById('strValue').innerHTML = parseInt(document.getElementById('strValue').innerHTML) + 1;
+            pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) - 1;
+        }
+    });
 
+    document.getElementById('strMinus').addEventListener('click', () => {
+        if (parseInt(document.getElementById('strValue').innerHTML) > 3) {
+            document.getElementById('strValue').innerHTML = parseInt(document.getElementById('strValue').innerHTML) - 1;
+            pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) + 1;
+        }
+    });
 
+    document.getElementById('dexPlus').addEventListener('click', () => {
+        if (parseInt(pointsLeft.innerHTML) > 0 && document.getElementById('dexValue').innerHTML < '20') {
+            document.getElementById('dexValue').innerHTML = parseInt(document.getElementById('dexValue').innerHTML) + 1;
+            pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) - 1;
+        }
+    });
+
+    document.getElementById('dexMinus').addEventListener('click', () => {
+        if (parseInt(document.getElementById('dexValue').innerHTML) > 3) {
+            document.getElementById('dexValue').innerHTML = parseInt(document.getElementById('dexValue').innerHTML) - 1;
+            pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) + 1;
+        }
+    });
+
+    document.getElementById('conPlus').addEventListener('click', () => {
+        if (parseInt(pointsLeft.innerHTML) > 0 && document.getElementById('conValue').innerHTML < '20') {
+            document.getElementById('conValue').innerHTML = parseInt(document.getElementById('conValue').innerHTML) + 1;
+            pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) - 1;
+        }
+    });
+
+    document.getElementById('conMinus').addEventListener('click', () => {
+        if (parseInt(document.getElementById('conValue').innerHTML) > 3) {
+            document.getElementById('conValue').innerHTML = parseInt(document.getElementById('conValue').innerHTML) - 1;
+            pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) + 1;
+        }
+    });
+
+    document.getElementById('intPlus').addEventListener('click', () => {
+        if (parseInt(pointsLeft.innerHTML) > 0 && document.getElementById('intValue').innerHTML < '20') {
+            document.getElementById('intValue').innerHTML = parseInt(document.getElementById('intValue').innerHTML) + 1;
+            pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) - 1;
+        }
+    });
+
+    document.getElementById('intMinus').addEventListener('click', () => {
+        if (parseInt(document.getElementById('intValue').innerHTML) > 3) {
+            document.getElementById('intValue').innerHTML = parseInt(document.getElementById('intValue').innerHTML) - 1;
+            pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) + 1;
+        }
+    });
+
+    document.getElementById('chaPlus').addEventListener('click', () => {
+        if (parseInt(pointsLeft.innerHTML) > 0 && document.getElementById('chaValue').innerHTML < '20') {
+            document.getElementById('chaValue').innerHTML = parseInt(document.getElementById('chaValue').innerHTML) + 1;
+            pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) - 1;
+        }
+    });
+
+    document.getElementById('chaMinus').addEventListener('click', () => {
+        if (parseInt(document.getElementById('chaValue').innerHTML) > 3) {
+            document.getElementById('chaValue').innerHTML = parseInt(document.getElementById('chaValue').innerHTML) - 1;
+            pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) + 1;
+        }
+    });
+
+    document.getElementById('willPlus').addEventListener('click', () => {
+        if (parseInt(pointsLeft.innerHTML) > 0 && document.getElementById('willValue').innerHTML < '20') {
+            document.getElementById('willValue').innerHTML = parseInt(document.getElementById('willValue').innerHTML) + 1;
+            pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) - 1;
+        }
+    });
+
+    document.getElementById('willMinus').addEventListener('click', () => {
+        if (parseInt(document.getElementById('willValue').innerHTML) > 3) {
+            document.getElementById('willValue').innerHTML = parseInt(document.getElementById('willValue').innerHTML) - 1;
+            pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) + 1;
+        }
+    });
 }
 
 document.body.querySelector('.resetGender').addEventListener('click', resetGender);
