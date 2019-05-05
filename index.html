@@ -27,54 +27,56 @@
             <p class="summaryGender">Gender: <span></span></p>
             <p class="summaryRace">Race: <span></span></p>
             <p class="summaryClass">Class: <span></span></p>
+            <p>Level: 1</p>
             <img class="summaryPortrait hidden" src="">
-            <p class="summaryAttributes">
-                Strength: <span id="summaryStrength"></span>
-                Dexterity: <span id="summaryDexterity"></span>
-                Constitution: <span id="summaryConstitution"></span>
-                Intelligence: <span id="summaryIntelligence"></span>
-                Charisma: <span id="summaryCharisma"></span>
-                Willpower: <span id="summaryWillpower"></span>
-            </p>
+            <div class="summaryAttributes">
+                <p>Strength: <span id="summaryStrength"></span></p>
+                <p>Dexterity: <span id="summaryDexterity"></span></p>
+                <p>Constitution: <span id="summaryConstitution"></span></p>
+                <p>Intelligence: <span id="summaryIntelligence"></span></p>
+                <p>Charisma: <span id="summaryCharisma"></span></p>
+                <p>Willpower: <span id="summaryWillpower"></span></p>
+            </div>
         </div>
         <div class="genderSelection hidden">
             <h2>First choose your character's gender:</h2>
-            <button id="btnFemale" class="gender female" title="Female" value="disabled"><i
-                    class="fas fa-venus gender female"></i></button>
-            <button id="btnMale" class="gender male" title="Male" value="disabled"><i
-                    class="fas fa-mars gender male"></i></button>
+            <button id="btnFemale" class="fas fa-venus gender female" title="Female" value="disabled"></button>
+            <button id="btnMale" class="fas fa-mars gender male" title="Male" value="disabled"></button>
             <div class="genderSelected"></div>
-            <button class="resetGender hidden"><i class="fas fa-undo-alt"></i></button>
-            <button class="genderForward hidden"><i class="fas fa-arrow-down"></i></button>
+            <button class="resetGender fas fa-undo-alt hidden" title="Reset"></button>
+            <button class="genderForward fas fa-arrow-down hidden" title="Forward"></button>
         </div>
         <div class="raceSelection hidden">
             <h2>Choose race:</h2>
-            <button id="human" class="charRace human" title="Humans are the most versatile. No modificators.">Human</>
-                <button id="elf" class="charRace elf">Elf</button>
-                <button id="dwarf" class="charRace dwarf">Dwarf</button>
-                <button id="halfling" class="charRace halfling">Halfling</button>
-                <div class="raceSelected"></div>
-                <button class="resetRace hidden"><i class="fas fa-undo-alt"></i></button>
-                <button class="raceForward hidden"><i class="fas fa-arrow-down"></i></button>
+            <i class="race-info fas fa-info"></i>
+            <button id="human" class="charRace human" title="Human">Human</button>
+            <button id="elf" class="charRace elf" title="Elf">Elf</button>
+            <button id="dwarf" class="charRace dwarf" title="Dwarf">Dwarf</button>
+            <button id="halfling" class="charRace halfling" title="Halfling">Halfling</button>
+            <div class="raceSelected"></div>
+            <button class="resetRace fas fa-undo-alt hidden" title="Reset"></button>
+            <button class="raceForward fas fa-arrow-down hidden" title="Forward"></button>
         </div>
         <div class="nameSelection hidden">
             <h2>Write your character's name:</h2>
             <form action="index.html">
-                <input type="text" name="charName" class="inputName"><button class="submitName">Confirm</button>
+                <input type="text" name="charName" id="inputName" class="inputName"><button id="submitName"
+                    class="submitName">Confirm</button>
                 <div class="nameSelected"></div>
-                <button class="resetName hidden"><i class="fas fa-undo-alt"></i></button>
-                <button class="nameForward hidden"><i class="fas fa-arrow-down"></i></button>
+                <button class="resetName fas fa-undo-alt hidden" title="Reset"></i></button>
+                <button class="nameForward fas fa-arrow-down hidden" title="Forward"></button>
             </form>
         </div>
         <div class="classSelection hidden">
             <h2>Choose a class:</h2>
-            <button id="warrior" class="charClass warrior">Warrior</button>
-            <button id="wizard" class="charClass wizard">Wizard</button>
-            <button id="cleric" class="charClass cleric">Cleric</button>
-            <button id="rogue" class="charClass rogue">Rogue</button>
+            <i class="class-info fas fa-info"></i>
+            <button id="warrior" class="charClass warrior" title="Warrior">Warrior</button>
+            <button id="wizard" class="charClass wizard" title="Wizard">Wizard</button>
+            <button id="cleric" class="charClass cleric" title="Cleric">Cleric</button>
+            <button id="rogue" class="charClass rogue" title="Rogue">Rogue</button>
             <div class="classSelected"></div>
-            <button class="resetClass hidden"><i class="fas fa-undo-alt"></i></button>
-            <button class="classForward hidden"><i class="fas fa-arrow-down"></i></button>
+            <button class="resetClass fas fa-undo-alt hidden" title="Reset"></button>
+            <button class="classForward fas fa-arrow-down hidden" title="Forward"></button>
         </div>
         <div class="portraitSelection hidden">
             <h2>Choose a portrait:</h2>
@@ -84,8 +86,8 @@
                 <button id="portrait3"><img src=''></button>
                 <button id="portrait4"><img src=''></button>
             </div>
-            <button class="resetPortrait hidden"><i class="fas fa-undo-alt"></i></button>
-            <button class="portraitForward hidden"><i class="fas fa-arrow-down"></i></button>
+            <button class="resetPortrait fas fa-undo-alt hidden" title="Reset"></button>
+            <button class="portraitForward fas fa-arrow-down hidden" title="Forward"></button>
         </div>
         <div class="attributeSelection hidden">
             <h2>Select your character's attributes:</h2>
@@ -138,7 +140,8 @@
                 </div>
             </div>
             <p class="pointsLeft">Points left: <span>5</span></p>
-            <button class="attributeForward"><i class="fas fa-arrow-down"></i></button>
+            <button class="resetAttributes fas fa-undo-alt" title="Reset"></button>
+            <button class="attributeForward fas fa-arrow-down" title="Forward"></button>
         </div>
     </div>
     <script src="main.js"></script>

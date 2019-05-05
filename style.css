@@ -6,6 +6,7 @@
 html {
     text-align: center;
     font-family: 'MedievalSharp';
+    box-sizing: border-box;
 }
 
 body {
@@ -86,14 +87,13 @@ button.start:hover {
 
 .summary {
     position: fixed;
-    min-height: 100vh;
-    max-height: 100vh;
+    height: 100vh;
     width: 25vw;
     top: 0;
     right: 0;
     padding: 25px;
     text-align: justify;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1.5;
     border: 3px solid rgb(65, 22, 22);
     background-color: rgb(94, 32, 32);
@@ -109,10 +109,10 @@ button.start:hover {
     text-align: center;
 }
 
-p.summaryAttributes {
+.summaryAttributes {
     display: flex;
     flex-direction: column;
-    padding-top: 32%;
+    padding-top: 25%;
     line-height: 1.8;
 }
 
@@ -260,8 +260,8 @@ button.minus:hover {
 
 input {
     height: 25px;
-    width: 150px;
-    margin: 10px;
+    width: 180px;
+    margin: 5px;
     border: 2px solid black;
     background-color: burlywood;
     border-radius: 5%;
@@ -295,12 +295,13 @@ button.gender:hover {
 .resetRace,
 .resetName,
 .resetClass,
-.resetPortrait {
+.resetPortrait,
+.resetAttributes {
     position: absolute;
-    bottom: 12%;
-    right: 9%;
-    height: 30px;
-    width: auto;
+    bottom: 11%;
+    right: 10%;
+    height: 28px;
+    width: 28px;
     background-color: rgb(36, 15, 15);
     color: aliceblue;
     padding: 5px;
@@ -310,6 +311,10 @@ button.gender:hover {
     text-align: center;
     line-height: 1;
     transition: 0.6s;
+}
+
+button.resetGender {
+    bottom: 10%;
 }
 
 button.resetPortrait {
@@ -324,7 +329,8 @@ button.portraitForward {
 .resetRace,
 .resetName,
 .resetClass,
-.resetPortrait:hover {
+.resetPortrait,
+.resetAttributes:hover {
     background-color: rgb(54, 22, 22);
     cursor: pointer;
 }
@@ -336,10 +342,10 @@ button.portraitForward {
 .portraitForward,
 .attributeForward {
     position: absolute;
-    bottom: 12%;
-    right: 3%;
-    height: 30px;
-    width: 30px;
+    bottom: 11%;
+    right: 4%;
+    height: 28px;
+    width: 28px;
     background-color: rgb(36, 15, 15);
     color: aliceblue;
     padding: 5px;
@@ -352,12 +358,17 @@ button.portraitForward {
     cursor: pointer;
 }
 
+button.genderForward {
+    bottom: 10%;
+}
+
+button.resetAttributes,
 button.attributeForward {
     bottom: 4%;
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .active {
@@ -409,4 +420,73 @@ button.charRace:hover {
 h2 {
     margin: 10px;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.85);
+}
+
+i.fa-info {
+    position: absolute;
+    top: 10%;
+    right: 2.5%;
+    width: 22px;
+    height: 22px;
+    font-size: 16px;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 2px;
+    line-height: 1.3;
+    text-align: center;
+    cursor: help;
+}
+
+i.race-info::after {
+    position: absolute;
+    display: none;
+    content: "Human: +1 CHA, -1 WILL \A Elf: +1 INT, -1 CON \A Dwarf: +1 CON, -1 DEX \A Halfling: +1 DEX, -1 STR";
+    top: 50%;
+    bottom: 50%;
+    width: 200px;
+    height: 90px;
+    padding: 10px;
+    font-size: 15px;
+    text-align: left;
+    color: aliceblue;
+    background-color: rgb(39, 1, 1);
+    line-height: 1.4;
+    border: 2px solid silver;
+    border-radius: 5px;
+    opacity: 0;
+    white-space: pre;
+    transition: all 0.5s ease 0s;
+}
+
+i.race-info:hover::after {
+    display: block;
+    opacity: 1;
+    z-index: 1;
+}
+
+i.class-info::after {
+    position: absolute;
+    display: none;
+    content: "Warrior: +1 STR, +1 CON \A Wizard: +1 INT, +1 WILL \A Cleric: +1 CHA, +1 WILL \A Rogue: +1 DEX, +1 INT";
+    top: 50%;
+    bottom: 50%;
+    width: 200px;
+    height: 90px;
+    padding: 10px;
+    font-size: 15px;
+    text-align: left;
+    color: aliceblue;
+    background-color: rgb(39, 1, 1);
+    line-height: 1.4;
+    border: 2px solid silver;
+    border-radius: 5px;
+    opacity: 0;
+    white-space: pre;
+    transition: all 0.5s ease 0s;
+}
+
+i.class-info:hover::after {
+    display: block;
+    opacity: 1;
+    z-index: 1;
 }
