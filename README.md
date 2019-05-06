@@ -7,9 +7,12 @@ The idea is to practice the DOM manipulation. I'm a huge RPG fan so I thought I'
 Just a basic HTML & CSS structure (still WIP), JS is evolving so I think I should make additional .js files soon for making the project cleaner.
 
 Plans:
-*A character portrait selection based on choices made;
-*An attribute selector (numbers) modified by race and class choices;
+*A character portrait selection based on choices made --> done
+
+*An attribute selector (numbers) modified by race and class choices --> done
+
 *Equipment selection;
+
 *...
 
 imagineSolo
