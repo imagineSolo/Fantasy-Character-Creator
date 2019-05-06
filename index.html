@@ -24,11 +24,14 @@
         </div>
         <div class="summary hidden">
             <h2 class="summaryName"><span></span></h2>
-            <p class="summaryGender">Gender: <span></span></p>
-            <p class="summaryRace">Race: <span></span></p>
-            <p class="summaryClass">Class: <span></span></p>
-            <p>Level: 1</p>
-            <img class="summaryPortrait hidden" src="">
+            <div class="summaryBasics">
+                <p class="summaryGender">Gender: <span></span></p>
+                <p class="summaryRace">Race: <span></span></p>
+                <p class="summaryClass">Class: <span></span></p>
+                <p>Level: 1</p>
+            </div>
+            <div class="summaryPortrait"> <img class="summaryPortrait hidden" src="">
+            </div>
             <div class="summaryAttributes">
                 <p>Strength: <span id="summaryStrength"></span></p>
                 <p>Dexterity: <span id="summaryDexterity"></span></p>
@@ -93,14 +96,7 @@
             <h2>Select your character's attributes:</h2>
             <p class="description">Shape your character by spending your free points on the attributes. You can also
                 lower an attribute value below 10 to gain some extra points.</p>
-            <div class="results">
-                <span>3 - 4: very low attribute</span>
-                <span>5 - 8: low</span>
-                <span>9 - 11: average</span>
-                <span>12 - 15: high</span>
-                <span>16 - 19: very high</span>
-                <span>20: incredible</span>
-            </div>
+            <i class="attribute-info fas fa-info"></i>
             <div class="statistics">
                 <div class="attribute">
                     <p>Strength</p>

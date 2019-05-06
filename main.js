@@ -213,10 +213,14 @@ attributeForward.addEventListener('click', (e) => {
 
 //--MAIN FUNCTIONS--
 document.body.querySelector('.start').addEventListener('click', startGame = (e) => {
+    const background = document.querySelector('.wrap')
     e.preventDefault();
     invitation.classList.add('hidden');
     summary.classList.remove('hidden');
     genderPanel.classList.remove('hidden');
+    background.style.backgroundImage = 'url("img/bgc-bricks.jpg")';
+    background.style.backgroundSize = 'auto auto';
+    background.style.backgroundRepeat = 'repeat';
 });
 
 btnGender.forEach((gender) => gender.addEventListener('click', function genderSelect(e) {
@@ -230,11 +234,13 @@ btnGender.forEach((gender) => gender.addEventListener('click', function genderSe
         if (e.target.classList.contains('female')) {
             genderType.textContent = 'Female';
             genderType.style.backgroundColor = 'rgb(75, 19, 19)';
+            genderType.style.boxShadow = 'inset 0px 0px 14px -1px rgba(31,4,4,1)';
             summaryGender.textContent = genderType.textContent;
         }
         if (e.target.classList.contains('male')) {
             genderType.textContent = 'Male';
             genderType.style.backgroundColor = 'rgb(75, 19, 19)';
+            genderType.style.boxShadow = 'inset 0px 0px 14px -1px rgba(31,4,4,1)';
             summaryGender.textContent = genderType.textContent;
         }
     }
@@ -255,6 +261,7 @@ document.body.querySelector('.raceSelection').addEventListener('click', function
         if (e.target.classList.contains('human')) {
             raceType.textContent = `You chose a human.`;
             raceType.style.backgroundColor = 'rgb(75, 19, 19)';
+            raceType.style.boxShadow = 'inset 0px 0px 14px -1px rgba(31,4,4,1)';
             summaryRace.textContent = 'Human';
             chaValue.innerHTML = parseInt(chaValue.innerHTML) + 1;
             willValue.innerHTML = parseInt(willValue.innerHTML) - 1;
@@ -262,6 +269,7 @@ document.body.querySelector('.raceSelection').addEventListener('click', function
         if (e.target.classList.contains('elf')) {
             raceType.textContent = `You chose an elf.`;
             raceType.style.backgroundColor = 'rgb(75, 19, 19)';
+            raceType.style.boxShadow = 'inset 0px 0px 14px -1px rgba(31,4,4,1)';
             summaryRace.textContent = 'Elf';
             intValue.innerHTML = parseInt(intValue.innerHTML) + 1;
             conValue.innerHTML = parseInt(conValue.innerHTML) - 1;
@@ -269,6 +277,7 @@ document.body.querySelector('.raceSelection').addEventListener('click', function
         if (e.target.classList.contains('dwarf')) {
             raceType.textContent = `You chose a dwarf.`;
             raceType.style.backgroundColor = 'rgb(75, 19, 19)';
+            raceType.style.boxShadow = 'inset 0px 0px 14px -1px rgba(31,4,4,1)';
             summaryRace.textContent = 'Dwarf';
             conValue.innerHTML = parseInt(conValue.innerHTML) + 1;
             dexValue.innerHTML = parseInt(dexValue.innerHTML) - 1;
@@ -277,6 +286,7 @@ document.body.querySelector('.raceSelection').addEventListener('click', function
         if (e.target.classList.contains('halfling')) {
             raceType.textContent = `You chose a halfling.`;
             raceType.style.backgroundColor = 'rgb(75, 19, 19)';
+            raceType.style.boxShadow = 'inset 0px 0px 14px -1px rgba(31,4,4,1)';
             summaryRace.textContent = 'Halfling';
             dexValue.innerHTML = parseInt(dexValue.innerHTML) + 1;
             strValue.innerHTML = parseInt(strValue.innerHTML) - 1;
@@ -290,6 +300,7 @@ document.body.querySelector('.submitName').addEventListener('click', function na
     if (typeof userNameSelection === 'string') {
         nameValue.textContent = `You'll be known as ${userNameSelection}!`;
         nameValue.style.backgroundColor = 'rgb(75, 19, 19)';
+        nameValue.style.boxShadow = 'inset 0px 0px 14px -1px rgba(31,4,4,1)';
         inputName.value = "";
         resetNameButton.classList.remove('hidden');
         nameForward.classList.remove('hidden');
@@ -319,6 +330,7 @@ document.body.querySelector('.classSelection').addEventListener('click', functio
         if (e.target.classList.contains('warrior')) {
             classType.textContent = `You chose a Warrior class!`;
             classType.style.backgroundColor = 'rgb(75, 19, 19)';
+            classType.style.boxShadow = 'inset 0px 0px 14px -1px rgba(31,4,4,1)';
             summaryClass.textContent = 'Warrior';
             strValue.innerHTML = parseInt(strValue.innerHTML) + 1;
             conValue.innerHTML = parseInt(conValue.innerHTML) + 1;
@@ -326,6 +338,7 @@ document.body.querySelector('.classSelection').addEventListener('click', functio
         if (e.target.classList.contains('wizard')) {
             classType.textContent = `You chose a Wizard class!`;
             classType.style.backgroundColor = 'rgb(75, 19, 19)';
+            classType.style.boxShadow = 'inset 0px 0px 14px -1px rgba(31,4,4,1)';
             summaryClass.textContent = 'Wizard';
             intValue.innerHTML = parseInt(intValue.innerHTML) + 1;
             willValue.innerHTML = parseInt(willValue.innerHTML) + 1;
@@ -333,6 +346,7 @@ document.body.querySelector('.classSelection').addEventListener('click', functio
         if (e.target.classList.contains('cleric')) {
             classType.textContent = `You chose a Cleric class!`;
             classType.style.backgroundColor = 'rgb(75, 19, 19)';
+            classType.style.boxShadow = 'inset 0px 0px 14px -1px rgba(31,4,4,1)';
             summaryClass.textContent = 'Cleric';
             chaValue.innerHTML = parseInt(chaValue.innerHTML) + 1;
             willValue.innerHTML = parseInt(willValue.innerHTML) + 1;
@@ -340,6 +354,7 @@ document.body.querySelector('.classSelection').addEventListener('click', functio
         if (e.target.classList.contains('rogue')) {
             classType.textContent = `You chose a Rogue class!`;
             classType.style.backgroundColor = 'rgb(75, 19, 19)';
+            classType.style.boxShadow = 'inset 0px 0px 14px -1px rgba(31,4,4,1)';
             summaryClass.textContent = 'Rogue';
             dexValue.innerHTML = parseInt(dexValue.innerHTML) + 1;
             intValue.innerHTML = parseInt(intValue.innerHTML) + 1;
