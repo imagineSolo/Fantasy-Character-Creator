@@ -455,10 +455,13 @@ const attributeSelect = () => {
         }
     });
 
-    document.getElementById('strMinus').addEventListener('click', () => {
+    document.getElementById('strMinus').addEventListener('click', (e) => {
         if (parseInt(document.getElementById('strValue').innerHTML) > 3) {
             strValue.innerHTML = parseInt(strValue.innerHTML) - 1;
             pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) + 1;
+            if (summaryClass.textContent == 'Warrior' && parseInt(strValue.innerHTML) === 4) {
+                return;
+            }
         }
     });
 
@@ -469,8 +472,11 @@ const attributeSelect = () => {
         }
     });
 
-    document.getElementById('dexMinus').addEventListener('click', () => {
+    document.getElementById('dexMinus').addEventListener('click', (e) => {
         if (parseInt(document.getElementById('dexValue').innerHTML) > 3) {
+            if (summaryRace.textContent == 'Halfling' && parseInt(dexValue.innerHTML) === 4) return;
+            if (summaryClass.textContent == 'Rogue' && parseInt(dexValue.innerHTML) === 4) return;
+            if (summaryClass.textContent == 'Rogue' && summaryRace.textContent == 'Halfling' && parseInt(dexValue.innerHTML) === 5) return;
             dexValue.innerHTML = parseInt(dexValue.innerHTML) - 1;
             pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) + 1;
         }
@@ -485,6 +491,9 @@ const attributeSelect = () => {
 
     document.getElementById('conMinus').addEventListener('click', () => {
         if (parseInt(document.getElementById('conValue').innerHTML) > 3) {
+            if (summaryRace.textContent == 'Dwarf' && parseInt(conValue.innerHTML) === 4) return;
+            if (summaryClass.textContent == 'Warrior' && parseInt(conValue.innerHTML) === 4) return;
+            if (summaryClass.textContent == 'Warrior' && summaryRace.textContent == 'Dwarf' && parseInt(conValue.innerHTML) === 5) return;
             conValue.innerHTML = parseInt(conValue.innerHTML) - 1;
             pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) + 1;
         }
@@ -499,6 +508,9 @@ const attributeSelect = () => {
 
     document.getElementById('intMinus').addEventListener('click', () => {
         if (parseInt(document.getElementById('intValue').innerHTML) > 3) {
+            if (summaryRace.textContent == 'Elf' && parseInt(intValue.innerHTML) === 4) return;
+            if (summaryClass.textContent == 'Wizard' && parseInt(intValue.innerHTML) === 4) return;
+            if (summaryClass.textContent == 'Wizard' && summaryRace.textContent == 'Elf' && parseInt(intValue.innerHTML) === 5) return;
             intValue.innerHTML = parseInt(intValue.innerHTML) - 1;
             pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) + 1;
         }
@@ -513,6 +525,9 @@ const attributeSelect = () => {
 
     document.getElementById('chaMinus').addEventListener('click', () => {
         if (parseInt(document.getElementById('chaValue').innerHTML) > 3) {
+            if (summaryRace.textContent == 'Human' && parseInt(chaValue.innerHTML) === 4) return;
+            if (summaryClass.textContent == 'Cleric' && parseInt(chaValue.innerHTML) === 4) return;
+            if (summaryClass.textContent == 'Cleric' && summaryRace.textContent == 'Human' && parseInt(chaValue.innerHTML) === 5) return;
             chaValue.innerHTML = parseInt(chaValue.innerHTML) - 1;
             pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) + 1;
         }
@@ -527,6 +542,8 @@ const attributeSelect = () => {
 
     document.getElementById('willMinus').addEventListener('click', () => {
         if (parseInt(document.getElementById('willValue').innerHTML) > 3) {
+            if (summaryClass.textContent == 'Wizard' && parseInt(willValue.innerHTML) === 4) return;
+            if (summaryClass.textContent == 'Cleric' && parseInt(willValue.innerHTML) === 4) return;
             willValue.innerHTML = parseInt(willValue.innerHTML) - 1;
             pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) + 1;
         }

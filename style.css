@@ -100,7 +100,13 @@ button.start:hover {
     text-align: justify;
     font-size: 22px;
     color: aliceblue;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.85);
     background-color: rgb(94, 32, 32);
+    background-image: url(img/005.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
     border: 5px ridge #767676;
     -webkit-box-shadow: inset 0px 0px 48px 11px rgb(53, 17, 17);
     -moz-box-shadow: inset 0px 0px 48px 11px rgb(53, 17, 17);
@@ -156,14 +162,62 @@ img.summaryPortrait {
     box-shadow: inset 0px 0px 33px 3px rgba(31, 4, 4, 0.65);
 }
 
+div.genderSelection {
+    background-image: url(img/000.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(94, 32, 32);
+    background-blend-mode: darken;
+}
+
+div.raceSelection {
+    background-image: url(img/002.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(94, 32, 32);
+    background-blend-mode: darken;
+}
+
+div.nameSelection {
+    background-image: url(img/003.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(94, 32, 32);
+    background-blend-mode: darken;
+}
+
+div.classSelection {
+    background-image: url(img/004.jpg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(94, 32, 32);
+    background-blend-mode: darken;
+}
+
 div.portraitSelection {
     height: 48vh;
+    background-image: url(img/005.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(94, 32, 32);
+    background-blend-mode: darken;
 }
 
 div.attributeSelection {
     width: 60%;
     height: 90vh;
     left: 33.5%;
+    background-image: url(img/006.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(94, 32, 32);
+    background-blend-mode: darken;
 }
 
 .statistics {
@@ -171,7 +225,7 @@ div.attributeSelection {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 60px 0 50px 0;
+    padding: 60px 0 20px 0;
 }
 
 .attribute {
@@ -180,6 +234,7 @@ div.attributeSelection {
     justify-content: center;
     align-items: center;
     padding: 1vh;
+    font-size: 24px;
 }
 
 div.attributeSelection button.plus,
@@ -191,7 +246,7 @@ div.attributeSelection button.minus {
     margin: 1vh;
     border: 0;
     color: aliceblue;
-    background-color: rgb(94, 32, 32);
+    background: transparent;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.85);
 }
 
@@ -207,14 +262,21 @@ div.attributeSelection p {
     display: flex;
     flex-direction: column;
     padding: 1vh;
-    font-size: 24px;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.85);
 }
 
-div.attributeSelection p.description,
-div.attributeSelection .results span {
-    font-size: 14px;
+p.description {
+    font-size: 18px;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.85);
+    line-height: 1.7;
+}
+
+.pointsLeft {
+    font-size: 24px;
+}
+
+.pointsLeft span {
+    font-size: 50px;
 }
 
 button.plus,
@@ -428,8 +490,8 @@ h2 {
 
 i.fa-info {
     position: absolute;
-    top: 10%;
-    right: 2.5%;
+    top: 22%;
+    right: 3%;
     width: 22px;
     height: 22px;
     font-size: 16px;
@@ -504,18 +566,14 @@ i.class-info:hover::after {
     z-index: 1;
 }
 
-i.attribute-info {
-    top: 17%;
-}
-
 i.attribute-info::after {
     position: absolute;
     display: none;
     content: "3 - 4: very low attribute \A 5 - 8: low \A 9 - 11: average \A 12 - 15: high \A 16 - 19: very high \A 20: incredible";
     top: 50%;
     left: 50%;
-    width: 160px;
-    height: 130px;
+    width: 172px;
+    height: 126px;
     padding: 10px;
     font-size: 15px;
     font-family: 'MedievalSharp';

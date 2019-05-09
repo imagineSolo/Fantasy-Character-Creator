@@ -43,8 +43,8 @@
         </div>
         <div class="genderSelection hidden">
             <h2>First choose your character's gender:</h2>
-            <button id="btnFemale" class="fas fa-venus gender female" title="Female" value="disabled"></button>
-            <button id="btnMale" class="fas fa-mars gender male" title="Male" value="disabled"></button>
+            <button id="btnFemale" class="fas fa-venus gender female" title="Female"></button>
+            <button id="btnMale" class="fas fa-mars gender male" title="Male"></button>
             <div class="genderSelected"></div>
             <button class="resetGender fas fa-undo-alt hidden" title="Reset"></button>
             <button class="genderForward fas fa-arrow-down hidden" title="Forward"></button>
@@ -95,7 +95,8 @@
         <div class="attributeSelection hidden">
             <h2>Select your character's attributes:</h2>
             <p class="description">Shape your character by spending your free points on the attributes. You can also
-                lower an attribute value below 10 to gain some extra points.</p>
+                lower an attribute value to gain some extra points. The highest value is 20, and the lowest value is 3
+                (although the race and class selection will affect this value).</p>
             <i class="attribute-info fas fa-info"></i>
             <div class="statistics">
                 <div class="attribute">
