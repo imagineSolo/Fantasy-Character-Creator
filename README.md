@@ -4,7 +4,7 @@ A character creator for an RPG game.
 This is the first project I'm working on all by myself.
 The idea is to practice the DOM manipulation. I'm a huge RPG fan so I thought I'd make a classic fantasy character creator. I have a lot of ideas so I'll try to update it in my free time between work and doing tutorials.
 
-Just a basic HTML & CSS structure (still WIP), JS is evolving so I think I should make additional .js files soon for making the project cleaner.
+Just a basic HTML & CSS structure (still WIP), JS is evolving so I think I should make additional .js files soon for making the project cleaner (--> done).
 
 The project is designed for desktop users, however I plan on using RWD.
 
