@@ -15,4 +15,6 @@ Plans:
 
 *...
 
+Live version: https://imaginesolo.github.io/Fantasy-Character-Creator/
+
 imagineSolo
