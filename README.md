@@ -9,6 +9,8 @@ Just a basic HTML & CSS structure (still WIP), JS is evolving so I think I shoul
 The project is designed for desktop users, however I plan on using RWD.
 
 Plans:
+
+
 *A character portrait selection based on choices made; --> done
 
 *An attribute selector (numbers) modified by race and class choices; --> done
@@ -17,6 +19,8 @@ Plans:
 
 *...
 
+
 Live version: https://imaginesolo.github.io/Fantasy-Character-Creator/
+
 
 imagineSolo
