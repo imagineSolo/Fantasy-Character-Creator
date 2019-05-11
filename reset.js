@@ -104,7 +104,47 @@ const resetPortrait = (e) => {
 
 resetAttributes.addEventListener('click', (e) => {
   e.preventDefault();
-
+  document.getElementById('strPlus').disabled = !true;
+  document.getElementById('strMinus').disabled = !true;
+  document.getElementById('dexPlus').disabled = !true;
+  document.getElementById('dexMinus').disabled = !true;
+  document.getElementById('conPlus').disabled = !true;
+  document.getElementById('conMinus').disabled = !true;
+  document.getElementById('intPlus').disabled = !true;
+  document.getElementById('intMinus').disabled = !true;
+  document.getElementById('chaPlus').disabled = !true;
+  document.getElementById('chaMinus').disabled = !true;
+  document.getElementById('willPlus').disabled = !true;
+  document.getElementById('willMinus').disabled = !true;
+  summaryStrength.textContent = '';
+  summaryDexterity.textContent = '';
+  summaryConstitution.textContent = '';
+  summaryIntelligence.textContent = '';
+  summaryCharisma.textContent = '';
+  summaryWillpower.textContent = '';
+  strValue.textContent = '10';
+  if (summaryRace.textContent == 'Halfling') strValue.textContent = parseInt(strValue.textContent) - 1;
+  if (summaryClass.textContent == 'Warrior') strValue.textContent = parseInt(strValue.textContent) + 1;
+  dexValue.textContent = '10';
+  if (summaryRace.textContent == 'Dwarf') dexValue.textContent = parseInt(strValue.textContent) - 1;
+  if (summaryRace.textContent == 'Halfling') dexValue.textContent = parseInt(strValue.textContent) + 1;
+  if (summaryClass.textContent == 'Rogue') dexValue.textContent = parseInt(strValue.textContent) + 1;
+  conValue.textContent = '10';
+  if (summaryRace.textContent == 'Dwarf') conValue.textContent = parseInt(conValue.textContent) + 1;
+  if (summaryRace.textContent == 'Elf') conValue.textContent = parseInt(conValue.textContent) - 1;
+  if (summaryClass.textContent == 'Warrior') conValue.textContent = parseInt(conValue.textContent) + 1;
+  intValue.textContent = '10';
+  if (summaryRace.textContent == 'Elf') intValue.textContent = parseInt(intValue.textContent) + 1;
+  if (summaryClass.textContent == 'Wizard') intValue.textContent = parseInt(intValue.textContent) + 1;
+  if (summaryClass.textContent == 'Rogue') intValue.textContent = parseInt(intValue.textContent) + 1;
+  chaValue.textContent = '10';
+  if (summaryRace.textContent == 'Human') chaValue.textContent = parseInt(chaValue.textContent) + 1;
+  if (summaryClass.textContent == 'Cleric') chaValue.textContent = parseInt(chaValue.textContent) + 1;
+  willValue.textContent = '10';
+  if (summaryRace.textContent == 'Human') willValue.textContent = parseInt(willValue.textContent) - 1;
+  if (summaryClass.textContent == 'Cleric') willValue.textContent = parseInt(willValue.textContent) + 1;
+  if (summaryClass.textContent == 'Wizard') willValue.textContent = parseInt(willValue.textContent) + 1;
+  pointsLeft.textContent = '5';
 });
 
 document.body.querySelector('.resetGender').addEventListener('click', resetGender);

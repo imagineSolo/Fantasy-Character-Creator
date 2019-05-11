@@ -40,6 +40,18 @@ attributeForward.addEventListener('click', (e) => {
     summaryIntelligence.innerHTML = intValue.textContent;
     summaryCharisma.innerHTML = chaValue.textContent;
     summaryWillpower.innerHTML = willValue.textContent;
+    document.getElementById('strPlus').disabled = true;
+    document.getElementById('strMinus').disabled = true;
+    document.getElementById('dexPlus').disabled = true;
+    document.getElementById('dexMinus').disabled = true;
+    document.getElementById('conPlus').disabled = true;
+    document.getElementById('conMinus').disabled = true;
+    document.getElementById('intPlus').disabled = true;
+    document.getElementById('intMinus').disabled = true;
+    document.getElementById('chaPlus').disabled = true;
+    document.getElementById('chaMinus').disabled = true;
+    document.getElementById('willPlus').disabled = true;
+    document.getElementById('willMinus').disabled = true;
   } else {
     alert('You have points left to spend!');
   }

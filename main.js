@@ -61,8 +61,7 @@ chaValue = document.getElementById('chaValue');
 willValue = document.getElementById('willValue');
 pointsLeft = document.querySelector('.pointsLeft span');
 
-
-//--START--
+//--START--//
 document.body.querySelector('.start').addEventListener('click', startGame = (e) => {
     const background = document.querySelector('.wrap')
     e.preventDefault();
