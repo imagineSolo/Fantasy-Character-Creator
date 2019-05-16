@@ -17,8 +17,6 @@ Plans:
 
 * An attribute selector (numbers) modified by race and class choices; --> done
 
-* Save progress in local storage;
-
 * Equipment selection (drag & drop);
 
 *...
