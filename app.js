@@ -196,10 +196,10 @@ const portraitSelection = () => {
     img4.src = 'img/portraits/Dwarf/Female/dwarfFemale04.bmp';
   }
   if (summaryGender.textContent === 'Male' && summaryRace.textContent === 'Dwarf') {
-    img1.src = 'img/portraits/Dwarf/Male/dwarfMale01.bmp';
-    img2.src = 'img/portraits/Dwarf/Male/dwarfMale02.bmp';
-    img3.src = 'img/portraits/Dwarf/Male/dwarfMale03.bmp';
-    img4.src = 'img/portraits/Dwarf/Male/dwarfMale04.bmp';
+    img1.src = 'img/portraits/Dwarf/Male/DwarfMale01.bmp';
+    img2.src = 'img/portraits/Dwarf/Male/DwarfMale02.bmp';
+    img3.src = 'img/portraits/Dwarf/Male/DwarfMale03.bmp';
+    img4.src = 'img/portraits/Dwarf/Male/DwarfMale04.bmp';
   }
   if (summaryGender.textContent === 'Female' && summaryRace.textContent === 'Halfling') {
     img1.src = 'img/portraits/Halfling/Female/halfFemale01.bmp';
