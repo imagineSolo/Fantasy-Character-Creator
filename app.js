@@ -240,9 +240,7 @@ const attributeSelect = () => {
     if (parseInt(document.getElementById('strValue').innerHTML) > 3) {
       strValue.innerHTML = parseInt(strValue.innerHTML) - 1;
       pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) + 1;
-      if (summaryClass.textContent == 'Warrior' && parseInt(strValue.innerHTML) === 4) {
-        return;
-      }
+      if (summaryClass.textContent == 'Warrior' && parseInt(strValue.innerHTML) === 4) return;
     }
   });
 
@@ -292,6 +290,7 @@ const attributeSelect = () => {
       if (summaryRace.textContent == 'Elf' && parseInt(intValue.innerHTML) === 4) return;
       if (summaryClass.textContent == 'Wizard' && parseInt(intValue.innerHTML) === 4) return;
       if (summaryClass.textContent == 'Wizard' && summaryRace.textContent == 'Elf' && parseInt(intValue.innerHTML) === 5) return;
+      if (summaryClass.textContent == 'Rogue' && summaryRace.textContent == 'Elf' && parseInt(intValue.innerHTML) === 5) return;
       intValue.innerHTML = parseInt(intValue.innerHTML) - 1;
       pointsLeft.innerHTML = parseInt(pointsLeft.innerHTML) + 1;
     }
